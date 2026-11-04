@@ -94,11 +94,28 @@ header.top{
   gap:12px; padding-block:18px; border-bottom:1px solid var(--line);
 }
 header.top .brand{
-  display:flex; align-items:center;
+  display:flex; align-items:center; gap:16px;
   text-decoration:none; color:var(--ink);
 }
-header.top .brand-logo{ display:block; height:72px; width:auto; }
-@media (max-width:560px){ header.top .brand-logo{ height:50px; } }
+header.top .brand-mark{ width:46px; height:46px; flex:none; }
+.brand-divider{ width:1px; height:40px; background:var(--line-strong); opacity:.4; flex:none; }
+.brand-word{ display:flex; flex-direction:column; justify-content:center; line-height:1.15; }
+.brand-name{
+  font-family:"Newsreader", Georgia, serif; font-weight:500; font-style:normal;
+  font-size:1.5rem; letter-spacing:.005em; color:var(--ink);
+}
+@media (prefers-color-scheme: dark){ .brand-name{ color:#f3ede0; } }
+:root[data-theme="dark"] .brand-name{ color:#f3ede0; }
+.brand-tag{
+  font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.15em;
+  text-transform:uppercase; color:var(--accent); margin-top:7px;
+}
+@media (max-width:560px){
+  header.top .brand-mark{ width:36px; height:36px; }
+  .brand-divider{ height:30px; }
+  .brand-name{ font-size:1.18rem; }
+  .brand-tag{ font-size:.58rem; letter-spacing:.12em; margin-top:5px; }
+}
 header.top nav{ display:flex; flex-wrap:wrap; align-items:center; }
 header.top nav a{
   display:inline-block; color:var(--muted); text-decoration:none; font-size:.9rem;
