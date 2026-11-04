@@ -235,18 +235,14 @@
   .tick .desc strong{ font-weight:600; }
 
   /* ---------- section photos ---------- */
-  .feature-split{ display:grid; grid-template-columns:1fr auto; gap:32px; align-items:start; margin-top:24px; }
-  @media (max-width:720px){ .feature-split{ grid-template-columns:1fr; } }
-  .feature-split img{
-    width:200px; max-width:100%; aspect-ratio:2/3; object-fit:cover;
-    border-radius:6px; border:1px solid var(--line); justify-self:center;
-  }
-  .section-photo{
+  .feature-row{ display:flex; flex-wrap:wrap; gap:24px; align-items:center; margin-top:22px; }
+  .feature-row > p{ flex:1 1 320px; margin:0; }
+  .feature-row figure{ flex:0 0 auto; margin:0; width:260px; max-width:100%; }
+  .feature-row img{
     display:block; width:100%; aspect-ratio:3/2; object-fit:cover;
-    border-radius:6px; border:1px solid var(--line); margin-top:24px;
+    border-radius:6px; border:1px solid var(--line);
   }
-  figure{ margin:0; }
-  figcaption{ margin-top:8px; font-size:.78rem; color:var(--muted); }
+  figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 
   /* ---------- specialties ---------- */
   .spec-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); margin-top:28px; border:1px solid var(--line); }
@@ -371,11 +367,11 @@
     <section id="osaaminen">
       <span class="rx">CYL — erityisosaaminen</span>
       <h2>Erityisosaaminen</h2>
-      <div class="feature-split">
+      <div class="feature-row">
         <p class="lede">Kaihi- ja linssikirurgia, taittovirhekorjaukset sekä glaukooman diagnostiikka ja hoito.</p>
         <figure>
-          <img src="photos/leikkaus.jpg" width="600" height="900" loading="lazy" alt="Silmäkirurgi suorittaa silmäleikkausta leikkausmikroskoopin avulla">
-          <figcaption>Silmäkirurgia leikkausmikroskoopin avulla</figcaption>
+          <img src="photos/leikkaus-thumb.jpg" width="720" height="480" loading="lazy" alt="Silmäkirurgi suorittaa silmäleikkausta leikkausmikroskoopin avulla">
+          <figcaption>Silmäkirurgiaa leikkausmikroskoopin avulla</figcaption>
         </figure>
       </div>
 
@@ -414,11 +410,13 @@
 
     <section id="vastaanotto">
       <span class="rx">OS — vastaanotto</span>
-      <h2>Mistä minut tavoittaa</h2>
-      <figure>
-        <img class="section-photo" src="photos/vastaanotto-tutkimus.jpg" width="1200" height="799" loading="lazy" alt="Potilaan näöntutkimus silmälääkärin vastaanotolla">
-        <figcaption>Näöntutkimus vastaanotolla</figcaption>
-      </figure>
+      <div class="feature-row">
+        <p class="lede">Kirurgiaa Helsingin ja Espoon silmäsairaaloissa, vastaanottoa lisäksi Lohjalla ja Nummelalla.</p>
+        <figure>
+          <img src="photos/vastaanotto-thumb.jpg" width="720" height="480" loading="lazy" alt="Potilaan näöntutkimus silmälääkärin vastaanotolla">
+          <figcaption>Näöntutkimus vastaanotolla</figcaption>
+        </figure>
+      </div>
       <div class="clinics">
         <div class="clinic"><div><div class="name">Silmäsairaala Helsinki</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">HKI</span></div>
         <div class="clinic"><div><div class="name">Silmäsairaala Espoo, Sello</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">ESPOO</span></div>
