@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://arvimattikuusniemi.fi/sitemap.xml

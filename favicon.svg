@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40">
+  <style>
+    .ring{ stroke:#9bb0ac; }
+    .mark{ stroke:#0e7a6c; }
+    .pupil{ fill:#17302d; }
+    .glint{ fill:#ffffff; }
+    @media (prefers-color-scheme: dark){
+      .ring{ stroke:#223634; }
+      .mark{ stroke:#5fd7bf; }
+      .pupil{ fill:#eaf2f0; }
+      .glint{ fill:#0e1716; }
+    }
+  </style>
+  <circle cx="20" cy="20" r="19" fill="none" class="ring" stroke-width="1"/>
+  <path d="M4 20C9 11 15 7 20 7s11 4 16 13c-5 9-11 13-16 13S9 29 4 20Z" fill="none" class="mark" stroke-width="2"/>
+  <circle cx="20" cy="20" r="5.5" class="pupil"/>
+  <circle cx="18.2" cy="18.2" r="1.6" class="glint"/>
+</svg>
