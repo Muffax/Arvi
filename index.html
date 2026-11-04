@@ -234,6 +234,20 @@
   .tick .desc{ color:var(--ink); line-height:1.5; }
   .tick .desc strong{ font-weight:600; }
 
+  /* ---------- section photos ---------- */
+  .feature-split{ display:grid; grid-template-columns:1fr auto; gap:32px; align-items:start; margin-top:24px; }
+  @media (max-width:720px){ .feature-split{ grid-template-columns:1fr; } }
+  .feature-split img{
+    width:200px; max-width:100%; aspect-ratio:2/3; object-fit:cover;
+    border-radius:6px; border:1px solid var(--line); justify-self:center;
+  }
+  .section-photo{
+    display:block; width:100%; aspect-ratio:3/2; object-fit:cover;
+    border-radius:6px; border:1px solid var(--line); margin-top:24px;
+  }
+  figure{ margin:0; }
+  figcaption{ margin-top:8px; font-size:.78rem; color:var(--muted); }
+
   /* ---------- specialties ---------- */
   .spec-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); margin-top:28px; border:1px solid var(--line); }
   @media (max-width:720px){ .spec-grid{ grid-template-columns:1fr; } }
@@ -357,7 +371,13 @@
     <section id="osaaminen">
       <span class="rx">CYL — erityisosaaminen</span>
       <h2>Erityisosaaminen</h2>
-      <p class="lede">Kaihi- ja linssikirurgia, taittovirhekorjaukset sekä glaukooman diagnostiikka ja hoito.</p>
+      <div class="feature-split">
+        <p class="lede">Kaihi- ja linssikirurgia, taittovirhekorjaukset sekä glaukooman diagnostiikka ja hoito.</p>
+        <figure>
+          <img src="photos/leikkaus.jpg" width="600" height="900" loading="lazy" alt="Silmäkirurgi suorittaa silmäleikkausta leikkausmikroskoopin avulla">
+          <figcaption>Silmäkirurgia leikkausmikroskoopin avulla</figcaption>
+        </figure>
+      </div>
 
       <div class="spec-grid">
         <div class="spec">
@@ -395,6 +415,10 @@
     <section id="vastaanotto">
       <span class="rx">OS — vastaanotto</span>
       <h2>Mistä minut tavoittaa</h2>
+      <figure>
+        <img class="section-photo" src="photos/vastaanotto-tutkimus.jpg" width="1200" height="799" loading="lazy" alt="Potilaan näöntutkimus silmälääkärin vastaanotolla">
+        <figcaption>Näöntutkimus vastaanotolla</figcaption>
+      </figure>
       <div class="clinics">
         <div class="clinic"><div><div class="name">Silmäsairaala Helsinki</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">HKI</span></div>
         <div class="clinic"><div><div class="name">Silmäsairaala Espoo, Sello</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">ESPOO</span></div>
