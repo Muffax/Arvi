@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="fi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Arvi-Matti Kuusniemi</title>
+<style>
+  /*
+    Layout concept: a diopter scale — a thin horizontal ruled line runs the
+    length of the page like the markings on a trial-lens gauge; the career
+    timeline reads as tick marks along it, and section numbers borrow the
+    notation of a refraction prescription (sph/cyl) rather than 01/02/03.
+  */
+  :root{
+    --bg:#fbfdfc;
+    --surface:#ffffff;
+    --surface-tint:#eef7f4;
+    --ink:#17302d;
+    --muted:#63797a;
+    --accent:#0e7a6c;
+    --accent-soft:#d9f0e9;
+    --accent-ink:#f2fbf8;
+    --line:#e6eeec;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1716;
+      --surface:#142221;
+      --surface-tint:#17302c;
+      --ink:#eaf2f0;
+      --muted:#9bb0ac;
+      --accent:#5fd7bf;
+      --accent-soft:#123b34;
+      --accent-ink:#06211c;
+      --line:#223634;
+      color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1716;
+    --surface:#142221;
+    --surface-tint:#17302c;
+    --ink:#eaf2f0;
+    --muted:#9bb0ac;
+    --accent:#5fd7bf;
+    --accent-soft:#123b34;
+    --accent-ink:#06211c;
+    --line:#223634;
+    color-scheme: dark;
+  }
+
+  *{box-sizing:border-box;}
+  html,body{ margin:0; padding:0; }
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:"Work Sans", "Segoe UI", sans-serif;
+    padding-left:max(16px, env(safe-area-inset-left,0px));
+    padding-right:max(16px, env(safe-area-inset-right,0px));
+  }
+  h1,h2,h3{
+    font-family:"Newsreader", "Iowan Old Style", Georgia, serif;
+    font-weight:500;
+    text-wrap:balance;
+    margin:0;
+  }
+  .mono{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+
+  a{ color:var(--accent); }
+
+  .wrap{ max-width:880px; margin:0 auto; }
+
+  /* ---------- header ---------- */
+  header.top{
+    display:flex; justify-content:space-between; align-items:center;
+    gap:12px; padding-block:22px; border-bottom:1px solid var(--line);
+  }
+  header.top .brand{
+    display:flex; align-items:center; gap:10px;
+    font-family:"Newsreader", Georgia, serif; font-size:1.05rem; letter-spacing:.01em;
+  }
+  header.top .brand svg{ width:26px; height:26px; flex:none; }
+  header.top nav a{
+    color:var(--muted); text-decoration:none; font-size:.92rem; margin-left:22px;
+  }
+  header.top nav a:hover{ color:var(--accent); }
+
+  /* ---------- hero ---------- */
+  .hero{ position:relative; overflow:hidden; padding-block:64px 48px; display:grid; grid-template-columns: 1.3fr .9fr; gap:40px; align-items:center; }
+  .hero::before{
+    content:""; position:absolute; top:-150px; right:-170px; width:480px; height:480px;
+    background:radial-gradient(circle, var(--accent-soft) 0%, transparent 68%);
+    pointer-events:none;
+  }
+  .hero > *{ position:relative; z-index:1; }
+  @media (max-width:720px){ .hero{ grid-template-columns:1fr; padding-block:40px 32px; } }
+  .eyebrow{
+    font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.14em;
+    text-transform:uppercase; color:var(--accent); margin:0 0 14px;
+  }
+  .hero h1{ font-size:clamp(2.1rem, 5vw, 3.1rem); line-height:1.08; }
+  .hero .role{ color:var(--muted); font-size:1.08rem; margin-top:14px; max-width:46ch; }
+  .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
+  .badge{
+    font-family:"IBM Plex Mono", monospace; font-size:.74rem; letter-spacing:.03em;
+    border:1px solid var(--line); border-radius:999px; padding:5px 12px; color:var(--muted);
+  }
+  .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    padding:12px 20px; border-radius:4px; font-size:.95rem; text-decoration:none;
+    font-weight:600;
+  }
+  .btn-primary{ background:var(--accent); color:var(--accent-ink); box-shadow:0 6px 18px -6px color-mix(in srgb, var(--accent) 60%, transparent); }
+  .btn-ghost{ border:1px solid var(--line); color:var(--ink); }
+
+  /* ---------- portrait ---------- */
+  .portrait{ position:relative; width:232px; height:232px; justify-self:center; }
+  .portrait svg{ position:absolute; inset:0; width:100%; height:100%; }
+  .portrait img{
+    position:absolute; inset:36px; width:calc(100% - 72px); height:calc(100% - 72px);
+    border-radius:50%; object-fit:cover; border:3px solid var(--surface);
+    box-shadow:0 14px 34px -12px color-mix(in srgb, var(--ink) 45%, transparent);
+  }
+  .ring-spin, .ring-spin-rev{ transform-box:fill-box; transform-origin:50% 50%; }
+  .ring-spin{ animation:spin-slow 48s linear infinite; }
+  .ring-spin-rev{ animation:spin-slow-rev 64s linear infinite; }
+  @keyframes spin-slow{ to{ transform:rotate(360deg); } }
+  @keyframes spin-slow-rev{ to{ transform:rotate(-360deg); } }
+  @media (prefers-reduced-motion: reduce){
+    .ring-spin, .ring-spin-rev{ animation:none; }
+  }
+
+  /* ---------- diopter rule ---------- */
+  .rule{
+    height:1px; background:
+      repeating-linear-gradient(90deg, var(--line) 0 1px, transparent 1px 14px);
+    margin-block:4px;
+  }
+
+  section{ padding-block:46px; border-top:1px solid var(--line); }
+  .rx{
+    font-family:"IBM Plex Mono", monospace; font-size:.76rem; letter-spacing:.06em;
+    color:var(--accent); margin-bottom:10px; display:block;
+  }
+  section h2{ font-size:clamp(1.5rem,3vw,2rem); margin-bottom:18px; }
+  .lede{ color:var(--muted); max-width:62ch; line-height:1.6; }
+
+  /* ---------- bio ---------- */
+  blockquote{
+    margin:0; padding-left:18px; border-left:2px solid var(--accent);
+    font-family:"Newsreader", Georgia, serif; font-style:italic; font-size:1.1rem;
+    line-height:1.55; color:var(--ink);
+  }
+
+  /* ---------- timeline ---------- */
+  .timeline{ margin-top:30px; }
+  .tick{
+    display:grid; grid-template-columns: 72px 16px 1fr; gap:0 18px;
+    align-items:start; padding-block:14px; position:relative;
+  }
+  .tick:not(:last-child){ border-bottom:1px dashed var(--line); }
+  .tick .yr{ font-family:"IBM Plex Mono", monospace; color:var(--accent); font-size:.92rem; padding-top:2px; }
+  .tick .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); margin-top:7px; justify-self:center; }
+  .tick .desc{ color:var(--ink); line-height:1.5; }
+  .tick .desc strong{ font-weight:600; }
+
+  /* ---------- specialties ---------- */
+  .spec-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); margin-top:28px; border:1px solid var(--line); }
+  @media (max-width:720px){ .spec-grid{ grid-template-columns:1fr; } }
+  .spec{ background:var(--surface); padding:26px 22px; }
+  .spec .num{ font-family:"IBM Plex Mono", monospace; color:var(--accent); font-size:.78rem; }
+  .spec h3{ font-size:1.12rem; margin:10px 0 8px; font-weight:600; font-family:"Work Sans",sans-serif; }
+  .spec p{ color:var(--muted); font-size:.92rem; line-height:1.55; margin:0; }
+  .spec .tags{ margin-top:12px; display:flex; flex-wrap:wrap; gap:6px; }
+  .spec .tags span{ font-size:.72rem; color:var(--muted); border:1px solid var(--line); border-radius:3px; padding:2px 7px; }
+
+  /* ---------- clinics ---------- */
+  .clinics{ margin-top:28px; display:grid; gap:0; }
+  .clinic{
+    display:grid; grid-template-columns: 1fr auto; gap:10px; align-items:baseline;
+    padding-block:16px; border-bottom:1px solid var(--line);
+  }
+  .clinic .name{ font-weight:600; }
+  .clinic .loc{ color:var(--muted); font-size:.9rem; }
+  .clinic .tag{ font-family:"IBM Plex Mono", monospace; font-size:.72rem; color:var(--accent); }
+
+  /* ---------- philosophy ---------- */
+  .philosophy{ background:var(--surface-tint); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .philosophy .wrap{ padding-block:54px; }
+  .philosophy blockquote{ font-size:clamp(1.2rem,2.6vw,1.55rem); border-left:none; padding-left:0; max-width:64ch; }
+  .philosophy cite{ display:block; margin-top:18px; font-style:normal; color:var(--muted); font-size:.9rem; }
+
+  /* ---------- feedback ---------- */
+  .feedback{ margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:18px; }
+  .fcard{ border:1px solid var(--line); border-radius:4px; padding:18px; background:var(--surface); }
+  .fcard p{ margin:0; font-size:.92rem; line-height:1.55; color:var(--ink); }
+  .fcard .stars{ color:var(--accent); font-size:.8rem; margin-bottom:8px; letter-spacing:.1em; }
+
+  /* ---------- booking ---------- */
+  .booking{ display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; }
+  @media (max-width:720px){ .booking{ grid-template-columns:1fr; } }
+  .contact-list{ display:grid; gap:10px; margin-top:18px; }
+  .contact-list .row{ display:flex; justify-content:space-between; gap:12px; border-bottom:1px dashed var(--line); padding-bottom:8px; font-size:.92rem; }
+  .contact-list .row span:first-child{ color:var(--muted); }
+  .contact-list .row span:last-child{ font-family:"IBM Plex Mono", monospace; }
+
+  footer{ padding-block:30px; border-top:1px solid var(--line); color:var(--muted); font-size:.8rem; line-height:1.6; }
+  footer a{ color:var(--muted); text-decoration:underline; }
+</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <svg viewBox="0 0 40 40" aria-hidden="true">
+        <circle cx="20" cy="20" r="19" fill="none" stroke="var(--line)" stroke-width="1"/>
+        <path d="M4 20C9 11 15 7 20 7s11 4 16 13c-5 9-11 13-16 13S9 29 4 20Z" fill="none" stroke="var(--accent)" stroke-width="1.6" stroke-linejoin="round"/>
+        <circle cx="20" cy="20" r="5.5" fill="var(--accent)"/>
+        <circle cx="18.2" cy="18.2" r="1.6" fill="var(--surface)"/>
+      </svg>
+      <span>Arvi-Matti Kuusniemi</span>
+    </div>
+    <nav>
+      <a href="#ura">Ura</a>
+      <a href="#osaaminen">Osaaminen</a>
+      <a href="#vastaanotto">Vastaanotto</a>
+    </nav>
+  </header>
+
+  <section class="hero" style="border:none; padding-top:64px;">
+    <div>
+      <p class="eyebrow">Silmätautien erikoislääkäri · Silmäkirurgi</p>
+      <h1>Näkemistä ei jätetä&nbsp;sattuman&nbsp;varaan.</h1>
+      <p class="role">Lääketieteen ja kirurgian tohtori. Erikoisalana kaihi- ja linssikirurgia, taittovirhekorjaukset ja glaukooma — yli kymmenen vuoden kokemus yliopistosairaalasta ja yksityiseltä puolelta.</p>
+      <div class="badges">
+        <span class="badge">LKT, väitellyt 2007</span>
+        <span class="badge">Silmäkirurgian erityispätevyys</span>
+        <span class="badge">EBOD-diplomi</span>
+        <span class="badge">HYKS Silmäklinikka 2011–2019</span>
+      </div>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="https://ajanvaraus.silmaasema.fi/Reservation/Calendar?Person=1872&amp;ServiceId=4">Varaa aika</a>
+        <a class="btn btn-ghost" href="#ajanvaraus">Yhteystiedot</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <svg viewBox="0 0 232 232" aria-hidden="true">
+        <circle cx="116" cy="116" r="114" fill="none" stroke="var(--line)" stroke-width="1"/>
+        <g class="ring-spin">
+          <circle cx="116" cy="116" r="94" fill="none" stroke="var(--accent)" stroke-width="1.2" stroke-dasharray="1 7"/>
+          <line x1="116" y1="2" x2="116" y2="16"/>
+          <line x1="116" y1="216" x2="116" y2="230"/>
+          <line x1="2" y1="116" x2="16" y2="116"/>
+          <line x1="216" y1="116" x2="230" y2="116"/>
+        </g>
+        <circle class="ring-spin-rev" cx="116" cy="116" r="76" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="2 10"/>
+      </svg>
+      <img src="data:image/jpeg;base64,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" alt="Arvi-Matti Kuusniemi">
+    </div>
+  </section>
+
+  <section id="ura">
+    <span class="rx">OD — ura</span>
+    <h2>Mutkien kautta löytynyt tasapaino</h2>
+    <p class="lede">Tie silmälääkäriksi ei ollut suora: ensin pitkä ura yleislääkärinä, sisätaudeilla ja radiologialla — ennen kuin tutkimustyössä huomattu käden taito vei kohti kirurgiaa.</p>
+
+    <div class="timeline">
+      <div class="tick"><span class="yr">2001</span><span class="dot"></span><span class="desc">Tutkimustyötä opintojen ohessa</span></div>
+      <div class="tick"><span class="yr">2007</span><span class="dot"></span><span class="desc">Valmistui lääkäriksi ja <strong>väitteli lääketieteen tohtoriksi</strong></span></div>
+      <div class="tick"><span class="yr">2010</span><span class="dot"></span><span class="desc">Erikoistumisopinnot <strong>silmätaudeilla</strong></span></div>
+      <div class="tick"><span class="yr">2011–2019</span><span class="dot"></span><span class="desc"><strong>HYKS Silmäklinikka</strong> — mukaan lukien erikoislääkärin tehtävät 2015–2019 ja tutkimusta glaukoomakirurgiasta</span></div>
+      <div class="tick"><span class="yr">2015</span><span class="dot"></span><span class="desc">Yksityisvastaanotto alkaa</span></div>
+      <div class="tick"><span class="yr">2018–</span><span class="dot"></span><span class="desc"><strong>Silmäasema</strong> — silmätautien erikoislääkäri ja silmäkirurgi</span></div>
+    </div>
+  </section>
+
+  <section id="osaaminen">
+    <span class="rx">CYL — erityisosaaminen</span>
+    <h2>Erityisosaaminen</h2>
+    <p class="lede">Kaihi- ja linssikirurgia, taittovirhekorjaukset sekä glaukooman diagnostiikka ja hoito.</p>
+
+    <div class="spec-grid">
+      <div class="spec">
+        <span class="num">01</span>
+        <h3>Kaihi- ja linssikirurgia</h3>
+        <p>Kaihileikkaukset ja linssileikkaukset, myös palvelusetelillä toteutettuna.</p>
+        <div class="tags"><span>Kaihileikkaus</span><span>Linssileikkaus</span><span>YAG</span></div>
+      </div>
+      <div class="spec">
+        <span class="num">02</span>
+        <h3>Taittovirhekorjaukset</h3>
+        <p>Näönkorjausleikkaukset ajantasaisin menetelmin, tilanteen mukaan valiten.</p>
+        <div class="tags"><span>SMILE</span><span>FemtoLASIK</span><span>PRK/ASA</span><span>ICL</span></div>
+      </div>
+      <div class="spec">
+        <span class="num">03</span>
+        <h3>Glaukooma</h3>
+        <p>Diagnostiikka ja hoito; taustalla tutkimustyötä HYKS:ssä.</p>
+        <div class="tags"><span>Diagnostiikka</span><span>Laserhoito</span><span>Seuranta</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="philosophy" style="border-top:none;">
+    <div class="wrap">
+      <span class="rx">SPH — työskentelytapa</span>
+      <blockquote>
+        &ldquo;Parasta tyydytystä saan asiakaskohtaamisista — siitä, että pystyn oikeasti kohtaamaan ihmisen: ymmärtämään, miksi hän on tullut silmälääkäriin, ja auttamaan häntä näkemään paremmin.&rdquo;
+      </blockquote>
+      <cite>Arvi-Matti Kuusniemi</cite>
+    </div>
+  </section>
+
+  <section id="vastaanotto">
+    <span class="rx">OS — vastaanotto</span>
+    <h2>Mistä minut tavoittaa</h2>
+    <div class="clinics">
+      <div class="clinic"><div><div class="name">Silmäsairaala Helsinki</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">HKI</span></div>
+      <div class="clinic"><div><div class="name">Silmäsairaala Espoo, Sello</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">ESPOO</span></div>
+      <div class="clinic"><div><div class="name">Silmäasema Lohja, Prisma</div><div class="loc">Satunnainen vastaanotto</div></div><span class="tag">LOHJA</span></div>
+      <div class="clinic"><div><div class="name">Silmäasema Nummela, Prisma</div><div class="loc">Satunnainen vastaanotto</div></div><span class="tag">NUMMELA</span></div>
+    </div>
+    <div class="booking" style="margin-top:30px;">
+      <div>
+        <p class="lede">Ajanvaraus ja asiakaspalvelu Silmäaseman kautta. Kielet: FI · SV · EN.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://ajanvaraus.silmaasema.fi/Reservation/Calendar?Person=1872&amp;ServiceId=4">Varaa aika</a>
+        </div>
+      </div>
+      <div class="contact-list">
+        <div class="row"><span>Asiakaspalvelu</span><span>010 190 200</span></div>
+        <div class="row"><span>Aukioloaika</span><span>ma–pe 8–18, la 9–16</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <span class="rx">VA — asiakaspalautetta</span>
+    <h2>Potilaiden kokemuksia</h2>
+    <div class="feedback">
+      <div class="fcard"><div class="stars">★★★★★</div><p>&ldquo;Täyden kympin arvoinen kokemus! Aivan ihana henkilökunta, hoitajat ja silmäkirurgi.&rdquo;</p></div>
+      <div class="fcard"><div class="stars">★★★★★</div><p>&ldquo;Asiakaspalvelu ja sujuva asiointi, ammattitaitoiset henkilöt ja loistava lopputulos.&rdquo;</p></div>
+    </div>
+  </section>
+
+  <footer>
+    <p>Koostettu julkisista Silmäasema-lähteistä. Viralliset yhteystiedot: <a href="https://www.silmaasema.fi">silmaasema.fi</a>.</p>
+  </footer>
+</div>
+</body>
+</html>
