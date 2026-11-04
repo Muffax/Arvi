@@ -237,11 +237,7 @@
   /* ---------- section photos ---------- */
   .feature-row{ display:flex; flex-wrap:wrap; gap:24px; align-items:center; margin-top:22px; }
   .feature-row > p{ flex:1 1 320px; margin:0; }
-  .feature-row figure{ flex:0 0 auto; margin:0; width:260px; max-width:100%; }
-  .feature-row img{
-    display:block; width:100%; aspect-ratio:3/2; object-fit:cover;
-    border-radius:6px; border:1px solid var(--line);
-  }
+  .feature-row figure{ flex:none; margin:0; }
   figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 
   /* ---------- specialties ---------- */
@@ -369,8 +365,8 @@
       <h2>Erityisosaaminen</h2>
       <div class="feature-row">
         <p class="lede">Kaihi- ja linssikirurgia, taittovirhekorjaukset sekä glaukooman diagnostiikka ja hoito.</p>
-        <figure>
-          <img src="photos/leikkaus-thumb.jpg" width="720" height="480" loading="lazy" alt="Silmäkirurgi suorittaa silmäleikkausta leikkausmikroskoopin avulla">
+        <figure style="flex:none; margin:0;">
+          <img src="photos/leikkaus-thumb.jpg" width="720" height="480" loading="lazy" alt="Silmäkirurgi suorittaa silmäleikkausta leikkausmikroskoopin avulla" style="display:block; width:180px; height:120px; object-fit:cover; border-radius:6px; border:1px solid var(--line);">
           <figcaption>Silmäkirurgiaa leikkausmikroskoopin avulla</figcaption>
         </figure>
       </div>
@@ -412,8 +408,8 @@
       <span class="rx">OS — vastaanotto</span>
       <div class="feature-row">
         <p class="lede">Kirurgiaa Helsingin ja Espoon silmäsairaaloissa, vastaanottoa lisäksi Lohjalla ja Nummelalla.</p>
-        <figure>
-          <img src="photos/vastaanotto-thumb.jpg" width="720" height="480" loading="lazy" alt="Potilaan näöntutkimus silmälääkärin vastaanotolla">
+        <figure style="flex:none; margin:0;">
+          <img src="photos/vastaanotto-thumb.jpg" width="720" height="480" loading="lazy" alt="Potilaan näöntutkimus silmälääkärin vastaanotolla" style="display:block; width:180px; height:120px; object-fit:cover; border-radius:6px; border:1px solid var(--line);">
           <figcaption>Näöntutkimus vastaanotolla</figcaption>
         </figure>
       </div>
