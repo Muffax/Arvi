@@ -67,17 +67,10 @@
 
 <header class="top">
   <a class="brand" href="#top">
-    <svg class="brand-mark" viewBox="0 0 44 44" aria-hidden="true">
-      <circle cx="22" cy="22" r="20.5" fill="none" stroke="var(--line)" stroke-width="1"/>
-      <circle cx="22" cy="22" r="16" fill="none" stroke="var(--accent)" stroke-width="1" stroke-dasharray="1 6"/>
-      <path d="M3 22C8.5 12 15 7 22 7s13.5 5 19 15c-5.5 10-12 15-19 15S8.5 32 3 22Z" fill="none" stroke="var(--accent)" stroke-width="1.5" stroke-linejoin="round"/>
-      <circle cx="22" cy="22" r="6.4" fill="var(--accent)"/>
-      <circle cx="19.6" cy="19.6" r="1.9" fill="var(--surface)"/>
-    </svg>
-    <span class="brand-word">
-      <span class="brand-name"><span class="brand-first">Arvi-Matti</span> <span class="brand-last">Kuusniemi</span></span>
-      <span class="brand-tag">Silmätautien erikoislääkäri</span>
-    </span>
+    <picture>
+      <source srcset="brand-dark.webp" media="(prefers-color-scheme: dark)">
+      <img class="brand-logo" src="brand-light.webp" width="760" height="131" alt="Arvi-Matti Kuusniemi – silmätautien erikoislääkäri, silmäkirurgi">
+    </picture>
   </a>
   <nav aria-label="Päävalikko">
     <a href="#hoidot">Hoidot</a>

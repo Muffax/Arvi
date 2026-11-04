@@ -94,19 +94,11 @@ header.top{
   gap:12px; padding-block:18px; border-bottom:1px solid var(--line);
 }
 header.top .brand{
-  display:flex; align-items:center; gap:13px;
+  display:flex; align-items:center;
   text-decoration:none; color:var(--ink);
 }
-header.top .brand svg{ width:32px; height:32px; flex:none; }
-.brand-word{ display:flex; flex-direction:column; line-height:1.2; }
-.brand-name{ font-family:"Newsreader", Georgia, serif; font-size:1.14rem; letter-spacing:.01em; }
-.brand-first{ font-style:italic; }
-.brand-last{ font-style:normal; }
-.brand-tag{
-  font-family:"IBM Plex Mono", monospace; font-size:.6rem; letter-spacing:.11em;
-  text-transform:uppercase; color:var(--muted); margin-top:3px;
-}
-@media (max-width:560px){ .brand-tag{ display:none; } }
+header.top .brand-logo{ display:block; height:72px; width:auto; }
+@media (max-width:560px){ header.top .brand-logo{ height:50px; } }
 header.top nav{ display:flex; flex-wrap:wrap; align-items:center; }
 header.top nav a{
   display:inline-block; color:var(--muted); text-decoration:none; font-size:.9rem;
