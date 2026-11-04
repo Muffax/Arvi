@@ -104,7 +104,6 @@ header.top nav a{
   display:inline-block; color:var(--muted); text-decoration:none; font-size:.9rem;
   margin-left:18px; padding:10px 4px;
 }
-header.top nav a .navcode{ font-family:"IBM Plex Mono", monospace; font-size:.72rem; color:var(--accent); margin-right:6px; }
 header.top nav a:first-child{ margin-left:0; }
 header.top nav a:hover{ color:var(--accent); }
 header.top nav a.nav-book{
