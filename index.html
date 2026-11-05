@@ -24,7 +24,7 @@
 <meta name="theme-color" content="#fbfdfc" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0e1716" media="(prefers-color-scheme: dark)">
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
@@ -299,6 +299,7 @@
 <footer>
   <div class="wrap-wide">
     <p>Sisältö koostettu Arvi-Matti Kuusniemen <a href="https://www.silmaasema.fi/silmalaakarit-ja-asiantuntijat/asiantuntija?expertId=0033X00003HwwgpQAB" target="_blank" rel="noopener noreferrer">Silmäasema-profiilista</a> ja <a href="https://yritys.silmaasema.fi/article/silmakirurgi-arvi-matti-kuusniemi/" target="_blank" rel="noopener noreferrer">henkilöstöartikkelista</a>. Viralliset yhteystiedot: <a href="https://www.silmaasema.fi" target="_blank" rel="noopener noreferrer">silmaasema.fi</a>.</p>
+    <p class="footer-legal"><a href="tietosuoja.html">Tietosuoja</a> · <a href="#" class="cookie-manage-link">Evästeasetukset</a></p>
   </div>
 </footer>
 
@@ -306,6 +307,16 @@
   <a class="btn btn-primary" href="https://ajanvaraus.silmaasema.fi/Reservation/Calendar?Person=1872&amp;ServiceId=4" target="_blank" rel="noopener noreferrer">Varaa aika</a>
 </div>
 
+<div id="cookie-consent" class="cookie-consent" hidden role="region" aria-label="Evästeasetukset">
+  <p>Käytämme Google Analytics -evästeitä kävijämäärän mittaamiseen. Emme kerää henkilö- tai potilastietoja. <a href="tietosuoja.html">Lue lisää</a>.</p>
+  <div class="cookie-consent-actions">
+    <button type="button" id="cookie-decline" class="btn btn-ghost">Hylkää</button>
+    <button type="button" id="cookie-accept" class="btn btn-primary">Hyväksy</button>
+  </div>
+  <p id="cookie-status" class="cookie-status"></p>
+</div>
+
 <script src="script.js"></script>
+<script src="consent.js"></script>
 </body>
 </html>
