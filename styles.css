@@ -139,8 +139,8 @@ header.top nav a.nav-book:hover{ color:var(--accent-ink); opacity:.92; }
   background:radial-gradient(circle, var(--accent-soft) 0%, transparent 68%);
   pointer-events:none;
 }
-.hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns: 1fr 1.05fr; gap:48px; align-items:center; }
-@media (max-width:860px){ .hero-grid{ grid-template-columns:1fr; } }
+.hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr); gap:48px; align-items:center; }
+@media (max-width:860px){ .hero-grid{ grid-template-columns:minmax(0,1fr); } }
 .eyebrow{
   font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.14em;
   text-transform:uppercase; color:var(--accent); margin:0 0 14px;
@@ -199,8 +199,8 @@ blockquote{
 .tick .desc strong{ font-weight:600; }
 
 /* ---------- story ---------- */
-.story-grid{ display:grid; grid-template-columns:1.1fr .9fr; gap:56px; margin-top:28px; align-items:start; }
-@media (max-width:860px){ .story-grid{ grid-template-columns:1fr; gap:32px; } }
+.story-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:56px; margin-top:28px; align-items:start; }
+@media (max-width:860px){ .story-grid{ grid-template-columns:minmax(0,1fr); gap:32px; } }
 .story-narrative p{ color:var(--ink); line-height:1.7; max-width:60ch; }
 .story-narrative blockquote{ margin-block:22px; }
 
@@ -215,15 +215,15 @@ blockquote{
 
 /* ---------- treatment cards ---------- */
 .paths-intro{ margin-bottom:8px; }
-.hoidot-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:32px; margin-top:36px; }
-@media (max-width:900px){ .hoidot-grid{ grid-template-columns:1fr; gap:40px; } }
-.hoidot-card{ display:flex; flex-direction:column; }
+.hoidot-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; margin-top:36px; }
+@media (max-width:900px){ .hoidot-grid{ grid-template-columns:minmax(0,1fr); gap:40px; } }
+.hoidot-card{ display:flex; flex-direction:column; min-width:0; }
 .hoidot-card-body{ display:flex; flex-direction:column; flex:1; padding-top:18px; }
 .path-q{ font-family:"IBM Plex Mono", monospace; color:var(--accent); font-size:.78rem; letter-spacing:.06em; }
 .hoidot-card-body h3{ font-size:clamp(1.15rem,1.6vw,1.35rem); margin:.5em 0 .5em; line-height:1.25; }
 .hoidot-card-body p{ color:var(--muted); line-height:1.6; margin:0; font-size:.95rem; }
-.path-media img{ display:block; width:100%; height:100%; object-fit:cover; border-radius:8px; border:1px solid var(--line); }
-.path-media{ aspect-ratio:4/3; border-radius:8px; overflow:hidden; }
+.path-media img{ display:block; width:100%; max-width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:8px; border:1px solid var(--line); }
+.path-media{ width:100%; min-width:0; border-radius:8px; overflow:hidden; }
 
 /* ---------- section photos (small inline figures) ---------- */
 .feature-row{ display:flex; flex-wrap:wrap; gap:24px; align-items:center; margin-top:22px; }
@@ -290,6 +290,7 @@ footer a{ color:var(--muted); text-decoration:underline; }
   body{ padding-bottom:78px; }
   .mobile-book{
     display:flex; position:fixed; left:0; right:0; bottom:0; z-index:50;
+    width:100%; max-width:100vw; box-sizing:border-box;
     padding:10px max(16px, env(safe-area-inset-left,0px)) calc(10px + env(safe-area-inset-bottom,0px)) max(16px, env(safe-area-inset-right,0px));
     background:var(--surface); border-top:1px solid var(--line);
   }
