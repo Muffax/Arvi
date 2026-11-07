@@ -114,10 +114,6 @@ header.top nav a.nav-book:hover{ color:var(--accent-ink); opacity:.92; }
 }
 .hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr); gap:48px; align-items:center; }
 @media (max-width:860px){ .hero-grid{ grid-template-columns:minmax(0,1fr); } }
-.eyebrow{
-  font-family:"Manrope", sans-serif; font-weight:700; font-size:.72rem; letter-spacing:.14em;
-  text-transform:uppercase; color:var(--accent); margin:0 0 14px;
-}
 .hero h1{ font-size:clamp(2.3rem, 4.8vw, 3.9rem); line-height:1.07; max-width:13ch; }
 .hero .role{ color:var(--muted); font-size:1.08rem; margin-top:16px; max-width:52ch; line-height:1.6; }
 .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
@@ -149,7 +145,7 @@ section{ padding-block:60px; border-top:1px solid var(--line); }
 @media (max-width:720px){ section{ padding-block:40px; } }
 .rx{
   font-family:"Manrope", sans-serif; font-weight:700; font-size:.76rem; letter-spacing:.06em;
-  color:var(--accent); margin-bottom:10px; display:block;
+  color:var(--accent); margin-bottom:12px; display:block;
 }
 section h2{ font-size:clamp(1.7rem,2.9vw,2.35rem); margin-bottom:18px; }
 .lede{ color:var(--muted); max-width:62ch; line-height:1.6; }
@@ -267,7 +263,7 @@ figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 /* ---------- philosophy (dark graphite, deliberately a different dark from Arvista's petrol) ---------- */
 .philosophy{ background:var(--dark-graphite); color:var(--on-dark-ink); border-top:none; border-bottom:none; }
 .philosophy .wrap-wide{ padding-block:54px; }
-.philosophy blockquote{ font-size:clamp(1.2rem,2.4vw,1.6rem); border-left:none; padding-left:0; max-width:64ch; color:var(--on-dark-ink); }
+.philosophy blockquote{ font-size:clamp(1.2rem,2.4vw,1.6rem); border-left:none; padding-left:0; margin-top:20px; max-width:64ch; color:var(--on-dark-ink); }
 .philosophy cite{ display:block; margin-top:18px; font-style:normal; color:var(--on-dark-muted); font-size:.9rem; font-weight:600; }
 
 /* ---------- feedback / testimonials ---------- */
