@@ -157,20 +157,8 @@ blockquote{
 }
 
 /* ---------- timeline ---------- */
-.timeline{ margin-top:6px; }
-.tick{
-  display:grid; grid-template-columns: 72px 16px 1fr; gap:0 18px;
-  align-items:start; padding-block:14px; position:relative;
-}
-.tick:not(:last-child){ border-bottom:1px dashed var(--line); }
-.tick .yr{ font-family:"Manrope", sans-serif; font-weight:700; color:var(--accent); font-size:.9rem; padding-top:2px; }
-.tick .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); margin-top:7px; justify-self:center; }
-.tick .desc{ color:var(--ink); line-height:1.5; font-size:.95rem; }
-.tick .desc strong{ font-weight:600; }
-
 /* ---------- story ---------- */
-.story-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:56px; align-items:start; }
-@media (max-width:860px){ .story-grid{ grid-template-columns:minmax(0,1fr); gap:32px; } }
+.story-grid{ max-width:68ch; }
 .story-narrative p{ color:var(--ink); line-height:1.7; max-width:60ch; }
 .story-narrative blockquote{ margin-block:22px; border-left-color:var(--gold); }
 
