@@ -146,6 +146,7 @@ header.top nav a.nav-book:hover{ color:var(--accent-ink); opacity:.92; }
 @media (max-width:420px){ .portrait{ width:240px; height:300px; } }
 
 section{ padding-block:60px; border-top:1px solid var(--line); }
+@media (max-width:720px){ section{ padding-block:40px; } }
 .rx{
   font-family:"Manrope", sans-serif; font-weight:700; font-size:.76rem; letter-spacing:.06em;
   color:var(--accent); margin-bottom:10px; display:block;
@@ -184,7 +185,7 @@ blockquote{
 .merit-label{ font-family:"Manrope", sans-serif; font-weight:700; color:var(--accent); font-size:.84rem; letter-spacing:.03em; padding-top:.15em; }
 .merit h3{ font-size:1.08rem; font-family:"Work Sans",sans-serif; font-weight:600; margin:0 0 6px; }
 .merit p{ color:var(--muted); line-height:1.6; margin:0; max-width:60ch; font-size:.95rem; }
-@media (max-width:600px){ .merit{ grid-template-columns:1fr; gap:4px; } }
+@media (max-width:600px){ .merit{ grid-template-columns:1fr; gap:4px; padding-block:14px; } }
 
 /* ---------- Arvista: merged intro + merits, dark petrol section ---------- */
 .arvista-intro{
@@ -192,7 +193,7 @@ blockquote{
   border-top:none;
 }
 .arvista-intro .rx{ color:var(--on-dark-accent); }
-.arvista-intro h2{ color:var(--on-dark-ink); }
+.arvista-intro h2{ color:var(--on-dark-ink); font-size:clamp(1.5rem,2.2vw,2rem); }
 .arvista-intro .lede{ color:var(--on-dark-muted); }
 .arvista-intro blockquote{ border-left-color:var(--gold); color:var(--on-dark-ink); }
 .arvista-intro .merit{ border-top-color:rgba(250,249,246,.14); }
