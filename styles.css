@@ -203,10 +203,10 @@ blockquote{
 .gold-rule{ display:block; width:44px; height:3px; background:var(--gold); border-radius:2px; margin:10px 0 20px; }
 .arvista-grid{ position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:56px; align-items:start; }
 @media (max-width:860px){ .arvista-grid{ grid-template-columns:minmax(0,1fr); gap:32px; } }
-.arvista-photo{ position:relative; margin-top:8px; }
-@media (max-width:860px){ .arvista-photo{ margin-top:0; } }
+.arvista-photo{ position:relative; margin-top:8px; max-width:440px; margin-left:auto; }
+@media (max-width:860px){ .arvista-photo{ margin-top:0; max-width:360px; margin-left:auto; margin-right:auto; } }
 .arvista-photo img{
-  display:block; width:100%; aspect-ratio:1/1; object-fit:cover; object-position:50% 85%;
+  display:block; width:100%; height:auto; aspect-ratio:1/1; object-fit:cover; object-position:50% 85%;
   border-radius:16px; box-shadow:0 24px 56px rgba(0,0,0,.45);
 }
 .arvista-badge{
