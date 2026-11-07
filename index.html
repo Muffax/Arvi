@@ -21,14 +21,14 @@
 <meta name="twitter:description" content="Silmätautien erikoislääkäri ja silmäkirurgi. Kaihi- ja linssikirurgia, taittovirhekorjaukset ja glaukooman hoito.">
 <meta name="twitter:image" content="https://arvimattikuusniemi.fi/photos/arvi-vastaanotolla.jpg">
 
-<meta name="theme-color" content="#fbfdfc" media="(prefers-color-scheme: light)">
-<meta name="theme-color" content="#0e1716" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#FAF9F6">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' https://www.google-analytics.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; script-src 'self' https://www.googletagmanager.com; connect-src 'self' https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; object-src 'none'; base-uri 'self'; form-action 'self'">
 
-<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-48x48.png" sizes="48x48" type="image/png">
 <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png">
 <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png">
+<link rel="icon" href="favicon-192x192.png" sizes="192x192" type="image/png">
 <link rel="shortcut icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
@@ -71,7 +71,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&family=Manrope:wght@500;600;700&display=swap">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -79,24 +79,7 @@
 
 <header class="top">
   <a class="brand" href="#top">
-    <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
-      <defs>
-        <radialGradient id="lensCore" cx="38%" cy="34%" r="75%">
-          <stop offset="0%" stop-color="#eafbf5"/>
-          <stop offset="45%" stop-color="var(--accent)"/>
-          <stop offset="100%" stop-color="#0a2420"/>
-        </radialGradient>
-      </defs>
-      <circle cx="24" cy="24" r="20.5" fill="none" stroke="var(--line-strong)" stroke-width="1" opacity="0.45"/>
-      <line x1="24" y1="3.8" x2="24" y2="0.4" stroke="var(--accent)" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
-      <line x1="44.2" y1="24" x2="47.6" y2="24" stroke="var(--accent)" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
-      <line x1="24" y1="44.2" x2="24" y2="47.6" stroke="var(--accent)" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
-      <line x1="3.8" y1="24" x2="0.4" y2="24" stroke="var(--accent)" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
-      <path d="M8.50 18.36 A16.5 16.5 0 1 1 33.46 37.52" fill="none" stroke="var(--accent)" stroke-width="1" stroke-linecap="round" opacity="0.32"/>
-      <path d="M18.51 12.22 A13 13 0 1 1 20.64 36.56" fill="none" stroke="var(--accent)" stroke-width="1.7" stroke-linecap="round"/>
-      <circle cx="24" cy="24" r="6.4" fill="url(#lensCore)"/>
-      <circle cx="21.6" cy="21.3" r="1.3" fill="#eafbf5" opacity="0.85"/>
-    </svg>
+    <img class="brand-mark" src="photos/logo-tunnus.png" alt="Arvi-Matti Kuusniemen tunnus" width="48" height="48">
     <span class="brand-divider" aria-hidden="true"></span>
     <span class="brand-word">
       <span class="brand-name">Arvi-Matti Kuusniemi</span>
@@ -164,7 +147,7 @@
 
         <article class="hoidot-card">
           <figure class="path-media">
-            <img src="photos/silman-lahikuva.jpg" width="1200" height="900" loading="lazy" alt="Silmän lähikuva">
+            <img src="photos/hoitosuunnittelu-smile.jpg" width="1200" height="900" loading="lazy" alt="SMILE-hoitosuunnittelun näyttökuva silmän mittaustiedoilla">
           </figure>
           <div class="hoidot-card-body">
             <span class="path-q">02</span>
@@ -187,39 +170,49 @@
     </div>
   </section>
 
-  <section id="arvista" aria-label="Miksi valita Arvi">
-    <div class="wrap-wide">
-      <span class="rx">Miksi valita Arvi</span>
-      <h2>Miksi valita Arvi-Matti?</h2>
-      <div class="merits">
-        <div class="merit">
-          <span class="merit-label">LKT</span>
-          <div>
-            <h3>Lääketieteen ja kirurgian tohtori</h3>
-            <p>Arvi-Matti väitteli lääketieteen ja kirurgian tohtoriksi vuonna 2007.</p>
+  <section id="arvista" class="arvista-intro" aria-label="Arvista">
+    <img class="arvista-watermark" src="photos/logo-tunnus.png" alt="" aria-hidden="true">
+    <div class="wrap-wide arvista-grid">
+      <div>
+        <span class="rx">Arvista</span>
+        <span class="gold-rule" aria-hidden="true"></span>
+        <h2>Lääketieteen ja kirurgian tohtori, silmäkirurgi</h2>
+        <p class="lede">Tie silmälääkäriksi ei ollut suora: ensin pitkä ura yleislääkärinä sisätautien ja radiologian parissa, ennen kuin tutkimustyössä havaittu käden taito vei hänet kohti kirurgiaa.</p>
+        <blockquote>&ldquo;Tutkimustyötä tehdessäni huomasin olevani kätevä käsistäni ja leikkaavani laboratorion parhaat jääleikkeet kudospaloista mikroskoopilla tutkittavaksi.&rdquo;</blockquote>
+        <div class="merits">
+          <div class="merit">
+            <span class="merit-label">LKT</span>
+            <div>
+              <h3>Lääketieteen ja kirurgian tohtori</h3>
+              <p>Arvi-Matti väitteli lääketieteen ja kirurgian tohtoriksi vuonna 2007.</p>
+            </div>
+          </div>
+          <div class="merit">
+            <span class="merit-label">EBOD</span>
+            <div>
+              <h3>Silmäkirurgian erityispätevyys, EBOD-diplomi</h3>
+              <p>Silmäkirurgian erityispätevyyden myöntävät Suomen Lääkäriliitto ja Silmäkirurgiyhdistys. EBOD-diplomi (European Board of Ophthalmology) puolestaan osoittaa, että teoreettinen osaaminen on arvioitu kokeella eurooppalaisella tasolla.</p>
+            </div>
+          </div>
+          <div class="merit">
+            <span class="merit-label">HYKS</span>
+            <div>
+              <h3>Vuodet HYKS Silmäklinikalla</h3>
+              <p>Yliopistosairaalassa hoidetaan myös vaikeampia ja harvinaisempia silmäsairauksia. Arvi-Matti työskenteli HYKS Silmäklinikalla erikoislääkärinä ja tutki samalla glaukoomakirurgiaa.</p>
+            </div>
+          </div>
+          <div class="merit">
+            <span class="merit-label">2001–</span>
+            <div>
+              <h3>Monipuolinen lääketieteellinen tausta</h3>
+              <p>Ura alkoi yleislääketieteestä, sisätaudeista ja radiologiasta ennen siirtymistä silmätauteihin vuonna 2010.</p>
+            </div>
           </div>
         </div>
-        <div class="merit">
-          <span class="merit-label">EBOD</span>
-          <div>
-            <h3>Silmäkirurgian erityispätevyys<br>EBOD-diplomi</h3>
-            <p>Silmäkirurgian erityispätevyyden myöntävät Suomen Lääkäriliitto ja Silmäkirurgiyhdistys. EBOD-diplomi (European Board of Ophthalmology) puolestaan osoittaa, että teoreettinen osaaminen on arvioitu kokeella eurooppalaisella tasolla.</p>
-          </div>
-        </div>
-        <div class="merit">
-          <span class="merit-label">HYKS</span>
-          <div>
-            <h3>Vuodet HYKS Silmäklinikalla</h3>
-            <p>Yliopistosairaalassa hoidetaan myös vaikeampia ja harvinaisempia silmäsairauksia. Arvi-Matti työskenteli HYKS Silmäklinikalla erikoislääkärinä ja tutki samalla glaukoomakirurgiaa.</p>
-          </div>
-        </div>
-        <div class="merit">
-          <span class="merit-label">2001–</span>
-          <div>
-            <h3>Monipuolinen lääketieteellinen tausta</h3>
-            <p>Ura alkoi yleislääketieteestä, sisätaudeista ja radiologiasta ennen siirtymistä silmätauteihin vuonna 2010.</p>
-          </div>
-        </div>
+      </div>
+      <div class="arvista-photo">
+        <img src="photos/arvi-tyopisteella.jpg" width="1080" height="1350" loading="lazy" alt="Arvi-Matti Kuusniemi työympäristössään">
+        <span class="arvista-badge">LKT&nbsp;&bull;&nbsp;EBOD&nbsp;&bull;&nbsp;v.&nbsp;2007–</span>
       </div>
     </div>
   </section>
@@ -227,20 +220,13 @@
   <section aria-label="Arvin tarina">
     <div class="wrap-wide">
       <span class="rx">Arvin tarina</span>
-      <h2>Tie silmäkirurgiksi</h2>
+      <h2 class="visually-hidden">Tie silmäkirurgiksi</h2>
       <div class="story-grid">
         <div class="story-narrative reveal">
           <div class="feature-row">
-            <p>Tie silmälääkäriksi ei ollut suora: ensin pitkä ura yleislääkärinä sisätautien ja radiologian parissa, ennen kuin tutkimustyössä havaittu käden taito vei hänet kohti kirurgiaa.</p>
-            <figure>
-              <img class="thumb-img thumb-240x320" src="photos/arvi-story.jpg" width="450" height="600" loading="lazy" alt="Arvi-Matti Kuusniemi">
-            </figure>
-          </div>
-          <blockquote>&ldquo;Tutkimustyötä tehdessäni huomasin olevani kätevä käsistäni ja leikkaavani laboratorion parhaat jääleikkeet kudospaloista mikroskoopilla tutkittavaksi.&rdquo;</blockquote>
-          <div class="feature-row">
             <p>Vuonna 2010 hän siirtyi opiskelemaan silmätauteja, ja erikoistumisen jälkeen hän työskenteli pitkään HYKS Silmäklinikalla, muun muassa erikoislääkärin tehtävissä, tutkien samalla glaukoomakirurgiaa.</p>
             <figure>
-              <img class="thumb-img thumb-256x320" src="photos/arvi-leikkausmikroskoopilla.jpg" width="1024" height="1280" loading="lazy" alt="Arvi-Matti Kuusniemi leikkausmikroskoopin ääressä">
+              <img class="thumb-img thumb-256x320" src="photos/arvi-leikkausmikroskoopilla.jpg" width="1120" height="1400" loading="lazy" alt="Arvi-Matti Kuusniemi leikkausmikroskoopin ääressä">
             </figure>
           </div>
           <blockquote>&ldquo;Silmäkirurgina työskentelyyn liittyy sopiva pieni jännitys, joka pitää aistit hereillä. Vastaanottotyö on rutiininomaisempaa, mutta optiikka on tosi mielenkiintoista ja silmän rakenteen kauneus lumoaa aina.&rdquo;</blockquote>
@@ -269,7 +255,7 @@
     </div>
   </section>
 
-  <section aria-label="Asiakaspalautetta">
+  <section class="testimonials" aria-label="Asiakaspalautetta">
     <div class="wrap-wide">
       <span class="rx">Asiakaskokemuksia</span>
       <h2>Potilaiden kokemuksia</h2>
@@ -281,26 +267,28 @@
     </div>
   </section>
 
-  <section id="vastaanotto" aria-label="Vastaanotot ja ajanvaraus">
-    <div class="wrap-wide">
-      <span class="rx">Vastaanotto</span>
-      <h2>Mistä minut tavoittaa</h2>
-      <div class="clinics">
-        <div class="clinic"><div><div class="name">Silmäsairaala Helsinki</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">HKI</span></div>
-        <div class="clinic"><div><div class="name">Silmäsairaala Espoo, Sello</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">ESPOO</span></div>
-        <div class="clinic"><div><div class="name">Silmäasema Lohja, Prisma</div><div class="loc">Satunnainen vastaanotto</div></div><span class="tag">LOHJA</span></div>
-        <div class="clinic"><div><div class="name">Silmäasema Nummela, Prisma</div><div class="loc">Satunnainen vastaanotto</div></div><span class="tag">NUMMELA</span></div>
-      </div>
-      <div class="booking">
-        <div>
-          <p class="lede">Ajanvaraus ja asiakaspalvelu Silmäaseman kautta. Kielet: FI · SV · EN.</p>
-          <div class="cta-row">
-            <a class="btn btn-primary" href="https://ajanvaraus.silmaasema.fi/Reservation/Calendar?Person=1872&amp;ServiceId=4" target="_blank" rel="noopener noreferrer">Varaa aika</a>
-          </div>
+  <section id="vastaanotto" class="vastaanotto" aria-label="Vastaanotot ja ajanvaraus">
+    <div class="wrap-wide vastaanotto-grid">
+      <figure class="vastaanotto-photo">
+        <img src="photos/arvi-potilastutkimus.jpg" width="1800" height="1013" loading="lazy" alt="Arvi-Matti Kuusniemi tutkimassa potilasta rakolampulla">
+      </figure>
+      <div class="vastaanotto-content">
+        <span class="rx">Vastaanotto</span>
+        <h2>Mistä minut tavoittaa</h2>
+        <p class="lede">Ajanvaraus ja asiakaspalvelu Silmäaseman kautta. Kielet: FI · SV · EN.</p>
+        <div class="clinics">
+          <div class="clinic"><div><div class="name">Silmäsairaala Helsinki</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">HKI</span></div>
+          <div class="clinic"><div><div class="name">Silmäsairaala Espoo, Sello</div><div class="loc">Silmäkirurgia ja vastaanotto</div></div><span class="tag">ESPOO</span></div>
+          <div class="clinic"><div><div class="name">Silmäasema Lohja, Prisma</div><div class="loc">Satunnainen vastaanotto</div></div><span class="tag">LOHJA</span></div>
+          <div class="clinic"><div><div class="name">Silmäasema Nummela, Prisma</div><div class="loc">Satunnainen vastaanotto</div></div><span class="tag">NUMMELA</span></div>
         </div>
         <div class="contact-list">
           <div class="row"><span>Asiakaspalvelu</span><span>010 190 200</span></div>
           <div class="row"><span>Aukioloaika</span><span>ma–pe 8–18, la 9–16</span></div>
+        </div>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://ajanvaraus.silmaasema.fi/Reservation/Calendar?Person=1872&amp;ServiceId=4" target="_blank" rel="noopener noreferrer">Varaa aika</a>
+          <a class="btn btn-ghost" href="tel:+35810190200">Soita 010 190 200</a>
         </div>
       </div>
     </div>
@@ -309,9 +297,13 @@
 </main>
 
 <footer>
-  <div class="wrap-wide">
-    <p>Sisältö koostettu Arvi-Matti Kuusniemen <a href="https://www.silmaasema.fi/silmalaakarit-ja-asiantuntijat/asiantuntija?expertId=0033X00003HwwgpQAB" target="_blank" rel="noopener noreferrer">Silmäasema-profiilista</a> ja <a href="https://yritys.silmaasema.fi/article/silmakirurgi-arvi-matti-kuusniemi/" target="_blank" rel="noopener noreferrer">henkilöstöartikkelista</a>. Viralliset yhteystiedot: <a href="https://www.silmaasema.fi" target="_blank" rel="noopener noreferrer">silmaasema.fi</a>.</p>
-    <p class="footer-legal"><a href="tietosuoja.html">Tietosuoja</a> · <a href="#" class="cookie-manage-link">Evästeasetukset</a></p>
+  <div class="wrap-wide footer-brand">
+    <img class="footer-logo" src="photos/logo-tunnus.png" alt="" aria-hidden="true">
+    <div>
+      <p>Sisältö koostettu Arvi-Matti Kuusniemen <a href="https://www.silmaasema.fi/silmalaakarit-ja-asiantuntijat/asiantuntija?expertId=0033X00003HwwgpQAB" target="_blank" rel="noopener noreferrer">Silmäasema-profiilista</a> ja <a href="https://yritys.silmaasema.fi/article/silmakirurgi-arvi-matti-kuusniemi/" target="_blank" rel="noopener noreferrer">henkilöstöartikkelista</a>. Viralliset yhteystiedot: <a href="https://www.silmaasema.fi" target="_blank" rel="noopener noreferrer">silmaasema.fi</a>.</p>
+      <p class="footer-legal"><a href="tietosuoja.html">Tietosuoja</a> · <a href="#" class="cookie-manage-link">Evästeasetukset</a></p>
+      <span class="footer-gold-rule" aria-hidden="true"></span>
+    </div>
   </div>
 </footer>
 

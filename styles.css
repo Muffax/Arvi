@@ -7,51 +7,26 @@
   two-letter codes double as a wayfinding index across the whole site.
 */
 :root{
-  --bg:#fbfdfc;
+  --bg:#FAF9F6;
   --surface:#ffffff;
-  --surface-tint:#eef7f4;
-  --ink:#17302d;
-  --muted:#55706f;
-  --accent:#0e7a6c;
-  --accent-soft:#d9f0e9;
-  --accent-ink:#f2fbf8;
-  --line:#e6eeec;
-  --line-strong:#7f948f;
-  --shadow-btn: rgba(14,122,108,.32);
-  --shadow-photo: rgba(23,48,45,.28);
+  --surface-tint:#E8E9E6;
+  --ink:#252D2C;
+  --muted:#55635F;
+  --accent:#14766B;
+  --accent-soft:#dcebe8;
+  --accent-ink:#FAF9F6;
+  --line:#e0e1de;
+  --line-strong:#c5c6c4;
+  --gold:#C79B42;
+  --shadow-btn: rgba(20,118,107,.32);
+  --shadow-photo: rgba(7,60,56,.28);
+  /* dark-section tokens — used only by .arvista-intro, .philosophy and footer, never globally */
+  --dark-petrol:#073C38;
+  --dark-graphite:#252D2C;
+  --on-dark-ink:#FAF9F6;
+  --on-dark-muted:#aebdb9;
+  --on-dark-accent:#7fcabf;
   color-scheme: light;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0e1716;
-    --surface:#142221;
-    --surface-tint:#17302c;
-    --ink:#eaf2f0;
-    --muted:#9bb0ac;
-    --accent:#5fd7bf;
-    --accent-soft:#123b34;
-    --accent-ink:#06211c;
-    --line:#223634;
-    --line-strong:#557870;
-    --shadow-btn: rgba(95,215,191,.28);
-    --shadow-photo: rgba(0,0,0,.5);
-    color-scheme: dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0e1716;
-  --surface:#142221;
-  --surface-tint:#17302c;
-  --ink:#eaf2f0;
-  --muted:#9bb0ac;
-  --accent:#5fd7bf;
-  --accent-soft:#123b34;
-  --accent-ink:#06211c;
-  --line:#223634;
-  --line-strong:#557870;
-  --shadow-btn: rgba(95,215,191,.28);
-  --shadow-photo: rgba(0,0,0,.5);
-  color-scheme: dark;
 }
 
 *{box-sizing:border-box;}
@@ -69,7 +44,7 @@ h1,h2,h3{
   text-wrap:balance;
   margin:0;
 }
-.mono{ font-family:"IBM Plex Mono", ui-monospace, monospace; font-variant-numeric: tabular-nums; }
+.mono{ font-family:"Manrope", ui-sans-serif, sans-serif; font-weight:700; font-variant-numeric: tabular-nums; }
 
 a{ color:var(--accent); }
 a, button, [role="button"]{ cursor:pointer; }
@@ -97,17 +72,15 @@ header.top .brand{
   display:flex; align-items:center; gap:16px;
   text-decoration:none; color:var(--ink);
 }
-header.top .brand-mark{ width:46px; height:46px; flex:none; }
+header.top .brand-mark{ width:46px; height:46px; flex:none; object-fit:contain; display:block; }
 .brand-divider{ width:1px; height:40px; background:var(--line-strong); opacity:.4; flex:none; }
 .brand-word{ display:flex; flex-direction:column; justify-content:center; line-height:1.15; }
 .brand-name{
   font-family:"Newsreader", Georgia, serif; font-weight:500; font-style:normal;
   font-size:1.5rem; letter-spacing:.005em; color:var(--ink);
 }
-@media (prefers-color-scheme: dark){ .brand-name{ color:#f3ede0; } }
-:root[data-theme="dark"] .brand-name{ color:#f3ede0; }
 .brand-tag{
-  font-family:"IBM Plex Mono", monospace; font-size:.68rem; letter-spacing:.15em;
+  font-family:"Manrope", sans-serif; font-weight:700; font-size:.68rem; letter-spacing:.15em;
   text-transform:uppercase; color:var(--accent); margin-top:7px;
 }
 @media (max-width:560px){
@@ -142,14 +115,14 @@ header.top nav a.nav-book:hover{ color:var(--accent-ink); opacity:.92; }
 .hero-grid{ position:relative; z-index:1; display:grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr); gap:48px; align-items:center; }
 @media (max-width:860px){ .hero-grid{ grid-template-columns:minmax(0,1fr); } }
 .eyebrow{
-  font-family:"IBM Plex Mono", monospace; font-size:.72rem; letter-spacing:.14em;
+  font-family:"Manrope", sans-serif; font-weight:700; font-size:.72rem; letter-spacing:.14em;
   text-transform:uppercase; color:var(--accent); margin:0 0 14px;
 }
 .hero h1{ font-size:clamp(2.3rem, 4.8vw, 3.9rem); line-height:1.07; max-width:13ch; }
 .hero .role{ color:var(--muted); font-size:1.08rem; margin-top:16px; max-width:52ch; line-height:1.6; }
 .badges{ display:flex; flex-wrap:wrap; gap:8px; margin-top:22px; }
 .badge{
-  font-family:"IBM Plex Mono", monospace; font-size:.74rem; letter-spacing:.03em;
+  font-family:"Manrope", sans-serif; font-weight:700; font-size:.74rem; letter-spacing:.03em;
   border:1px solid var(--line); border-radius:999px; padding:5px 12px; color:var(--muted);
 }
 .cta-row{ display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
@@ -174,7 +147,7 @@ header.top nav a.nav-book:hover{ color:var(--accent-ink); opacity:.92; }
 
 section{ padding-block:60px; border-top:1px solid var(--line); }
 .rx{
-  font-family:"IBM Plex Mono", monospace; font-size:.76rem; letter-spacing:.06em;
+  font-family:"Manrope", sans-serif; font-weight:700; font-size:.76rem; letter-spacing:.06em;
   color:var(--accent); margin-bottom:10px; display:block;
 }
 section h2{ font-size:clamp(1.7rem,2.9vw,2.35rem); margin-bottom:18px; }
@@ -193,7 +166,7 @@ blockquote{
   align-items:start; padding-block:14px; position:relative;
 }
 .tick:not(:last-child){ border-bottom:1px dashed var(--line); }
-.tick .yr{ font-family:"IBM Plex Mono", monospace; color:var(--accent); font-size:.9rem; padding-top:2px; }
+.tick .yr{ font-family:"Manrope", sans-serif; font-weight:700; color:var(--accent); font-size:.9rem; padding-top:2px; }
 .tick .dot{ width:8px; height:8px; border-radius:50%; background:var(--accent); margin-top:7px; justify-self:center; }
 .tick .desc{ color:var(--ink); line-height:1.5; font-size:.95rem; }
 .tick .desc strong{ font-weight:600; }
@@ -202,16 +175,58 @@ blockquote{
 .story-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:56px; margin-top:28px; align-items:start; }
 @media (max-width:860px){ .story-grid{ grid-template-columns:minmax(0,1fr); gap:32px; } }
 .story-narrative p{ color:var(--ink); line-height:1.7; max-width:60ch; }
-.story-narrative blockquote{ margin-block:22px; }
+.story-narrative blockquote{ margin-block:22px; border-left-color:var(--gold); }
 
-/* ---------- merits (why choose) ---------- */
+/* ---------- merits (used inside the dark Arvista section as a plain list) ---------- */
 .merits{ margin-top:28px; }
 .merit{ display:grid; grid-template-columns:96px 1fr; gap:22px; padding-block:24px; border-top:1px solid var(--line); }
 .merits .merit:last-child{ border-bottom:1px solid var(--line); }
-.merit-label{ font-family:"IBM Plex Mono", monospace; color:var(--accent); font-size:.84rem; letter-spacing:.03em; padding-top:.15em; }
+.merit-label{ font-family:"Manrope", sans-serif; font-weight:700; color:var(--accent); font-size:.84rem; letter-spacing:.03em; padding-top:.15em; }
 .merit h3{ font-size:1.08rem; font-family:"Work Sans",sans-serif; font-weight:600; margin:0 0 6px; }
 .merit p{ color:var(--muted); line-height:1.6; margin:0; max-width:60ch; font-size:.95rem; }
 @media (max-width:600px){ .merit{ grid-template-columns:1fr; gap:4px; } }
+
+/* ---------- Arvista: merged intro + merits, dark petrol section ---------- */
+.arvista-intro{
+  position:relative; overflow:hidden; background:var(--dark-petrol); color:var(--on-dark-ink);
+  border-top:none;
+}
+.arvista-intro .rx{ color:var(--on-dark-accent); }
+.arvista-intro h2{ color:var(--on-dark-ink); }
+.arvista-intro .lede{ color:var(--on-dark-muted); }
+.arvista-intro blockquote{ border-left-color:var(--gold); color:var(--on-dark-ink); }
+.arvista-intro .merit{ border-top-color:rgba(250,249,246,.14); }
+.arvista-intro .merits .merit:last-child{ border-bottom-color:rgba(250,249,246,.14); }
+.arvista-intro .merit-label{ color:var(--on-dark-accent); }
+.arvista-intro .merit h3{ color:var(--on-dark-ink); }
+.arvista-intro .merit p{ color:var(--on-dark-muted); }
+.gold-rule{ display:block; width:44px; height:3px; background:var(--gold); border-radius:2px; margin:10px 0 20px; }
+.arvista-grid{ position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:56px; align-items:start; }
+@media (max-width:860px){ .arvista-grid{ grid-template-columns:minmax(0,1fr); gap:32px; } }
+.arvista-photo{ position:relative; margin-top:8px; }
+@media (max-width:860px){ .arvista-photo{ margin-top:0; } }
+.arvista-photo img{
+  display:block; width:100%; aspect-ratio:1/1; object-fit:cover; object-position:50% 85%;
+  border-radius:16px; box-shadow:0 24px 56px rgba(0,0,0,.45);
+}
+.arvista-badge{
+  position:absolute; left:-14px; bottom:-14px; background:var(--accent); color:var(--on-dark-ink);
+  padding:12px 18px; border-radius:10px; font-family:"Manrope",sans-serif; font-weight:700;
+  font-size:.74rem; letter-spacing:.03em; box-shadow:0 14px 30px rgba(0,0,0,.35);
+}
+@media (max-width:560px){ .arvista-badge{ left:-6px; bottom:-10px; padding:9px 13px; font-size:.64rem; } }
+.arvista-watermark{
+  position:absolute; top:-120px; right:-110px; width:520px; height:520px;
+  object-fit:contain; opacity:.14; pointer-events:none; z-index:0;
+}
+@media (max-width:720px){ .arvista-watermark{ width:260px; height:260px; top:-50px; right:-80px; opacity:.16; } }
+
+/* ---------- hoidot section background ---------- */
+#hoidot{ background:var(--surface-tint); }
+.hoidot-card{ background:var(--surface); border-radius:10px; overflow:hidden; border:1px solid var(--line); }
+.hoidot-card .hoidot-card-body{ padding:18px 20px 22px; }
+.hoidot-card .path-media{ border-radius:0; }
+.hoidot-card .path-media img{ border-radius:0; border:none; }
 
 /* ---------- treatment cards ---------- */
 .paths-intro{ margin-bottom:8px; }
@@ -219,7 +234,7 @@ blockquote{
 @media (max-width:900px){ .hoidot-grid{ grid-template-columns:minmax(0,1fr); gap:40px; } }
 .hoidot-card{ display:flex; flex-direction:column; min-width:0; }
 .hoidot-card-body{ display:flex; flex-direction:column; flex:1; padding-top:18px; }
-.path-q{ font-family:"IBM Plex Mono", monospace; color:var(--accent); font-size:.78rem; letter-spacing:.06em; }
+.path-q{ font-family:"Manrope", sans-serif; font-weight:700; color:var(--accent); font-size:.78rem; letter-spacing:.06em; }
 .hoidot-card-body h3{ font-size:clamp(1.15rem,1.6vw,1.35rem); margin:.5em 0 .5em; line-height:1.25; }
 .hoidot-card-body p{ color:var(--muted); line-height:1.6; margin:0; font-size:.95rem; }
 .path-media img{ display:block; width:100%; max-width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:8px; border:1px solid var(--line); }
@@ -233,14 +248,13 @@ figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 .thumb-img{ display:block; object-fit:cover; border-radius:6px; border:1px solid var(--line); }
 .thumb-160x240{ width:160px; height:240px; }
 .thumb-180x120{ width:180px; height:120px; }
-.thumb-240x320{ width:240px; height:320px; }
 .thumb-256x320{ width:256px; height:320px; }
 
 /* ---------- specialties mini-grid (legacy, still used on treatment stub pages) ---------- */
 .spec-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--line); margin-top:28px; border:1px solid var(--line); }
 @media (max-width:720px){ .spec-grid{ grid-template-columns:1fr; } }
 .spec{ background:var(--surface); padding:26px 22px; }
-.spec .num{ font-family:"IBM Plex Mono", monospace; color:var(--accent); font-size:.78rem; }
+.spec .num{ font-family:"Manrope", sans-serif; font-weight:700; color:var(--accent); font-size:.78rem; }
 .spec h3{ font-size:1.12rem; margin:10px 0 8px; font-weight:600; font-family:"Work Sans",sans-serif; }
 .spec p{ color:var(--muted); font-size:.92rem; line-height:1.55; margin:0; }
 .spec .tags{ margin-top:12px; display:flex; flex-wrap:wrap; gap:6px; }
@@ -254,30 +268,41 @@ figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 }
 .clinic .name{ font-weight:600; }
 .clinic .loc{ color:var(--muted); font-size:.9rem; }
-.clinic .tag{ font-family:"IBM Plex Mono", monospace; font-size:.72rem; color:var(--accent); }
+.clinic .tag{ font-family:"Manrope", sans-serif; font-weight:700; font-size:.72rem; color:var(--accent); }
 
-/* ---------- philosophy ---------- */
-.philosophy{ background:var(--surface-tint); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+/* ---------- philosophy (dark graphite, deliberately a different dark from Arvista's petrol) ---------- */
+.philosophy{ background:var(--dark-graphite); color:var(--on-dark-ink); border-top:none; border-bottom:none; }
 .philosophy .wrap-wide{ padding-block:54px; }
-.philosophy blockquote{ font-size:clamp(1.2rem,2.4vw,1.6rem); border-left:none; padding-left:0; max-width:64ch; }
-.philosophy cite{ display:block; margin-top:18px; font-style:normal; color:var(--ink); font-size:.9rem; font-weight:600; }
+.philosophy blockquote{ font-size:clamp(1.2rem,2.4vw,1.6rem); border-left:none; padding-left:0; max-width:64ch; color:var(--on-dark-ink); }
+.philosophy cite{ display:block; margin-top:18px; font-style:normal; color:var(--on-dark-muted); font-size:.9rem; font-weight:600; }
 
-/* ---------- feedback ---------- */
+/* ---------- feedback / testimonials ---------- */
+.testimonials{ background:var(--surface-tint); }
 .feedback{ margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:18px; }
 .fcard{ border:1px solid var(--line); border-radius:4px; padding:18px; background:var(--surface); }
 .fcard p{ margin:0; font-size:.92rem; line-height:1.55; color:var(--ink); }
 .fcard .mark{ font-family:"Newsreader", Georgia, serif; font-size:1.6rem; color:var(--accent); line-height:1; margin-bottom:6px; }
 
-/* ---------- booking ---------- */
-.booking{ display:grid; grid-template-columns:1.1fr .9fr; gap:36px; align-items:center; margin-top:30px; }
-@media (max-width:720px){ .booking{ grid-template-columns:1fr; } }
-.contact-list{ display:grid; gap:10px; margin-top:18px; }
+/* ---------- vastaanotto ---------- */
+.vastaanotto-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:48px; align-items:center; margin-top:28px; }
+@media (max-width:860px){ .vastaanotto-grid{ grid-template-columns:minmax(0,1fr); gap:28px; } }
+.vastaanotto-photo{ margin:0; }
+.vastaanotto-photo img{
+  display:block; width:100%; height:auto; aspect-ratio:16/11; object-fit:cover;
+  border-radius:16px; box-shadow:0 24px 56px -16px var(--shadow-photo);
+}
+.vastaanotto-content .clinics{ margin-top:22px; }
+.vastaanotto-content .contact-list{ margin-top:16px; }
+.contact-list{ display:grid; gap:10px; }
 .contact-list .row{ display:flex; justify-content:space-between; gap:12px; border-bottom:1px dashed var(--line); padding-bottom:8px; font-size:.92rem; }
 .contact-list .row span:first-child{ color:var(--muted); }
-.contact-list .row span:last-child{ font-family:"IBM Plex Mono", monospace; }
+.contact-list .row span:last-child{ font-family:"Manrope", sans-serif; font-weight:700; }
 
-footer{ padding-block:30px; border-top:1px solid var(--line); color:var(--muted); font-size:.8rem; line-height:1.6; }
-footer a{ color:var(--muted); text-decoration:underline; }
+footer{ background:var(--dark-petrol); padding-block:30px; border-top:none; color:var(--on-dark-muted); font-size:.8rem; line-height:1.6; }
+footer a{ color:var(--on-dark-accent); text-decoration:underline; }
+.footer-brand{ display:flex; align-items:flex-start; gap:14px; }
+.footer-logo{ width:26px; height:26px; flex:none; object-fit:contain; margin-top:2px; }
+.footer-gold-rule{ display:block; width:60px; height:1px; background:var(--gold); opacity:.7; margin-top:18px; }
 .footer-legal{ margin-top:10px; }
 
 .visually-hidden{
