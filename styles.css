@@ -182,22 +182,35 @@ blockquote{
 
 /* ---------- hoidot section background ---------- */
 #hoidot{ background:var(--surface-tint); }
-.hoidot-card{ background:var(--surface); border-radius:10px; overflow:hidden; border:1px solid var(--line); }
-.hoidot-card .hoidot-card-body{ padding:18px 20px 22px; }
-.hoidot-card .path-media{ border-radius:0; }
-.hoidot-card .path-media img{ border-radius:0; border:none; }
 
 /* ---------- treatment cards ---------- */
 .paths-intro{ margin-bottom:8px; }
 .hoidot-grid{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:32px; margin-top:36px; }
-@media (max-width:900px){ .hoidot-grid{ grid-template-columns:minmax(0,1fr); gap:40px; } }
-.hoidot-card{ display:flex; flex-direction:column; min-width:0; }
-.hoidot-card-body{ display:flex; flex-direction:column; flex:1; padding-top:18px; }
-.path-q{ font-family:"Manrope", sans-serif; font-weight:700; color:var(--accent); font-size:.78rem; letter-spacing:.06em; }
-.hoidot-card-body h3{ font-size:clamp(1.15rem,1.6vw,1.35rem); margin:.5em 0 .5em; line-height:1.25; }
-.hoidot-card-body p{ color:var(--muted); line-height:1.6; margin:0; font-size:.95rem; }
-.path-media img{ display:block; width:100%; max-width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; border-radius:8px; border:1px solid var(--line); }
-.path-media{ width:100%; min-width:0; border-radius:8px; overflow:hidden; }
+@media (max-width:900px){ .hoidot-grid{ grid-template-columns:minmax(0,1fr); gap:14px; } }
+@media (max-width:720px){ .hoidot-sub{ margin-top:32px; } }
+
+.hoidot-card{
+  background:var(--surface); border:1px solid var(--line); border-radius:10px; overflow:hidden; min-width:0;
+  display:grid; grid-template-columns:1fr; grid-template-areas:"img" "title" "text";
+}
+.hoidot-card-img{ grid-area:img; display:block; width:100%; height:auto; aspect-ratio:4/3; object-fit:cover; }
+.hoidot-card h3{ grid-area:title; font-size:clamp(1.15rem,1.6vw,1.35rem); line-height:1.25; margin:18px 20px 8px; }
+.hoidot-card p{ grid-area:text; color:var(--muted); line-height:1.6; font-size:.95rem; margin:0 20px 22px; }
+
+/* mobile: compact dark card — thumbnail + title + chevron, text below */
+@media (max-width:900px){
+  .hoidot-card{
+    background:var(--dark-petrol); border:none; border-radius:16px; padding:16px;
+    grid-template-columns:56px 1fr auto; column-gap:12px; row-gap:10px; align-items:center;
+    grid-template-areas:
+      "img title chev"
+      "text text text";
+  }
+  .hoidot-card-img{ width:56px; height:56px; aspect-ratio:1/1; border-radius:10px; }
+  .hoidot-card h3{ margin:0; font-size:1rem; color:var(--on-dark-ink); }
+  .hoidot-card p{ margin:0; font-size:.87rem; color:var(--on-dark-muted); }
+  .hoidot-card::after{ content:"\203A"; grid-area:chev; color:var(--gold); font-size:1.15rem; line-height:1; }
+}
 
 /* ---------- section photos (small inline figures) ---------- */
 figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
