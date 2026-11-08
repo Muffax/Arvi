@@ -20,9 +20,8 @@
   --gold:#C79B42;
   --shadow-btn: rgba(20,118,107,.32);
   --shadow-photo: rgba(7,60,56,.28);
-  /* dark-section tokens — used only by .arvista-intro, .philosophy and footer, never globally */
+  /* dark-section tokens — used only by .arvista-intro, the mobile hoidot cards and footer, never globally */
   --dark-petrol:#073C38;
-  --dark-graphite:#252D2C;
   --on-dark-ink:#FAF9F6;
   --on-dark-muted:#aebdb9;
   --on-dark-accent:#7fcabf;
@@ -179,6 +178,8 @@ blockquote{
   object-fit:contain; opacity:.14; pointer-events:none; z-index:0;
 }
 @media (max-width:720px){ .arvista-watermark{ width:260px; height:260px; top:-50px; right:-80px; opacity:.16; } }
+.arvista-intro .badges{ position:relative; z-index:1; }
+.arvista-intro .badge{ border-color:rgba(250,249,246,.3); color:var(--on-dark-ink); }
 
 /* ---------- hoidot section background ---------- */
 #hoidot{ background:var(--surface-tint); }
@@ -247,11 +248,14 @@ figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 .clinic .loc{ color:var(--muted); font-size:.9rem; }
 .clinic .tag{ font-family:"Manrope", sans-serif; font-weight:700; font-size:.72rem; color:var(--accent); }
 
-/* ---------- philosophy (dark graphite, deliberately a different dark from Arvista's petrol) ---------- */
-.philosophy{ background:var(--dark-graphite); color:var(--on-dark-ink); border-top:none; border-bottom:none; }
+/* ---------- philosophy (light — follows the dark Arvista section, so two quote cards instead of another dark wall) ---------- */
+.philosophy{ background:var(--surface-tint); color:var(--ink); }
 .philosophy .wrap-wide{ padding-block:54px; }
-.philosophy blockquote{ font-size:clamp(1.2rem,2.4vw,1.6rem); border-left:none; padding-left:0; margin-top:20px; max-width:64ch; color:var(--on-dark-ink); }
-.philosophy cite{ display:block; margin-top:18px; font-style:normal; color:var(--on-dark-muted); font-size:.9rem; font-weight:600; }
+.philosophy-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; margin-top:8px; }
+@media (max-width:720px){ .philosophy-grid{ grid-template-columns:1fr; } }
+.philosophy blockquote{ font-size:1.05rem; border-left:2px solid var(--accent); padding-left:16px; margin:0; max-width:none; color:var(--ink); }
+.philosophy blockquote p{ margin:0; }
+.philosophy cite{ display:block; margin-top:22px; font-style:normal; color:var(--muted); font-size:.9rem; font-weight:600; }
 
 /* ---------- feedback / testimonials ---------- */
 .testimonials{ background:var(--surface-tint); }
