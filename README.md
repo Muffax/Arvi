@@ -35,10 +35,21 @@ Verkkotunnuksen DNS-hallinta on siirretty domainhotellin nimipalvelimilta **Clou
 - Neljä tietopankki-artikkelia (`tietopankki/kaihi.html`, `linssileikkaus.html`, `naonkorjaus.html`, `glaukooma.html`) ovat luonnosvaiheessa: otsikko, johdanto ja sivurakenne ovat valmiit, mutta kuusi lääketieteellistä sisältölohkoa per artikkeli (oireet, tutkiminen, hoitovaihtoehdot, riskit, toipuminen, UKK) odottavat Arvi-Matin kirjoittamaa/hyväksymää sisältöä. Sivut ovat `noindex`-tilassa kunnes sisältö on valmis.
 - Kaikkien sivujen tekstit on koottu ja käyty läpi Arvi-Matin kanssa erillisessä Excel-tiedostossa (ei tässä repossa) — pyydä ajantasainen versio jos tarvitset.
 
+## Silmäaseman ohjeistus (lääkärin oma sivu)
+
+Arvi-Matti on saanut Silmäaseman markkinoinnilta (Kati Taivaloja, 13.11.2026) virallisen ohjeistuksen siitä, mitä Silmäaseman sisällöstä saa/ei saa käyttää omalla sivulla. Lähde on PowerPoint-tiedosto, **ei tässä repossa** — pyydä ajantasainen versio käyttäjältä jos tarvitset yksityiskohtia. Neljä keskeistä sääntöä, jotka vaikuttavat tähän sivustoon:
+
+1. **Ajanvaraus:** lääkärikohtaiseen Silmäaseman ajanvaraukseen saa linkittää (nykyinen `Person=1872&ServiceId=4` on tällainen henkilökohtainen linkki).
+2. **Markkinointikuvat:** Silmäaseman ottamia markkinointikuvia Arvista **ei saa** käyttää omalla sivulla (käyttöoikeudet eivät salli kolmannelle luovutusta). Sivuston kuvat eivät ole Silmäaseman kuvia.
+3. **Asiakaspalautteet:** palautetekstejä **ei saa** kopioida/toistaa omalle sivulle — Silmäasemalla on lupa niiden käyttöön vain omalla sivullaan. Linkitä sen sijaan Silmäaseman asiantuntijaprofiiliin. **Älä lisää uusia suoria palautesitaatteja tälle sivustolle** — `testimonials`-osio linkittää nyt vain ulos.
+4. **Artikkelit/videot:** Silmäaseman julkaisemiin asiantuntija-artikkeleihin ja videoihin, joissa Arvi esiintyy asiantuntijana, saa linkittää — mutta tekstejä **ei saa** kopioida.
+5. **Ei takalinkkiä:** Silmäaseman lääkäriprofiilista ei koskaan linkitetä takaisin lääkärin omalle sivulle (heidän oma käytäntönsä) — älä oleta/suunnittele SEO:ta tämän varaan.
+
 ## SEO / tekninen
 
 - Favicon-paketti (SVG + PNG-koot + `.ico` + `apple-touch-icon` + `site.webmanifest`) vastaa sivuston brändi-ilmettä (optiikka-aiheinen linssimerkki).
-- JSON-LD: `Physician` + `WebSite` (schema.org), ei `SearchAction`-tyyppiä koska sivustolla ei ole hakutoimintoa.
+- JSON-LD: `Physician` (`@id: .../#arvi`) + `WebSite` + neljä `MedicalClinic`-lohkoa (Helsinki, Espoo Sello, Lohja, Nummela) etusivulla. Klinikkalohkot sisältävät tarkat katuosoitteet (`PostalAddress`) ja linkittyvät lääkäriin `"employee": {"@id": ".../#arvi"}`. **Osoitteet ovat vain JSON-LD:ssä, eivät näy sivulla visuaalisesti** (käyttäjän tietoinen valinta) — ei aukioloaikoja (ei tiedossa). Paikallishaku-SEO:ta varten (esim. "silmälääkäri Lohja").
+- Tietopankki-sivuilla (`tietopankki/*.html`) on `BreadcrumbList`-skeema (Etusivu → artikkelin nimi), mutta **ei vielä** `MedicalWebPage`/muuta sisältöskeemaa eikä sitemap-merkintää — tietoisesti lykätty kunnes sivut poistuvat `noindex`-tilasta (ks. "Sisällön tila"), jottei skeemaan kirjata hyväksymätöntä sisältöä.
 - Open Graph / Twitter Card -tagit kaikilla sivuilla.
 - Google Search Console -vahvistustiedosto: `google2136c08e2637ada8.html` (juuressa, älä muokkaa sisältöä).
 

@@ -163,7 +163,7 @@ blockquote{
 .arvista-intro .rx{ color:var(--on-dark-accent); }
 .arvista-intro h2{ color:var(--on-dark-ink); font-size:clamp(1.5rem,2.2vw,2rem); }
 .arvista-intro .lede{ color:var(--on-dark-muted); }
-.arvista-intro blockquote{ border-left-color:var(--gold); color:var(--on-dark-ink); }
+.arvista-intro blockquote{ border-left-color:var(--gold); color:var(--on-dark-ink); margin-top:24px; }
 .gold-rule{ display:block; width:44px; height:3px; background:var(--gold); border-radius:2px; margin:10px 0 20px; }
 .arvista-grid{ position:relative; z-index:1; display:grid; grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr); gap:56px; align-items:start; }
 @media (max-width:860px){ .arvista-grid{ grid-template-columns:minmax(0,1fr); gap:32px; } }
@@ -202,15 +202,14 @@ blockquote{
 @media (max-width:900px){
   .hoidot-card{
     background:var(--dark-petrol); border:none; border-radius:16px; padding:16px;
-    grid-template-columns:56px 1fr auto; column-gap:12px; row-gap:10px; align-items:center;
+    grid-template-columns:56px 1fr; column-gap:12px; row-gap:10px; align-items:center;
     grid-template-areas:
-      "img title chev"
-      "text text text";
+      "img title"
+      "text text";
   }
   .hoidot-card-img{ width:56px; height:56px; aspect-ratio:1/1; border-radius:10px; }
   .hoidot-card h3{ margin:0; font-size:1rem; color:var(--on-dark-ink); }
   .hoidot-card p{ margin:0; font-size:.87rem; color:var(--on-dark-muted); }
-  .hoidot-card::after{ content:"\203A"; grid-area:chev; color:var(--gold); font-size:1.15rem; line-height:1; }
 }
 
 /* ---------- section photos (small inline figures) ---------- */
@@ -250,7 +249,7 @@ figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 
 /* ---------- philosophy (light — follows the dark Arvista section, so two quote cards instead of another dark wall) ---------- */
 .philosophy{ background:var(--surface-tint); color:var(--ink); }
-.philosophy .wrap-wide{ padding-block:54px; }
+.philosophy .wrap-wide{ padding-top:0; padding-bottom:54px; }
 .philosophy-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:28px; margin-top:8px; }
 @media (max-width:720px){ .philosophy-grid{ grid-template-columns:1fr; } }
 .philosophy blockquote{ font-size:1.05rem; border-left:2px solid var(--accent); padding-left:16px; margin:0; max-width:none; color:var(--ink); }
@@ -261,11 +260,10 @@ figcaption{ margin-top:6px; font-size:.74rem; color:var(--muted); }
 .philosophy cite{ display:block; font-style:normal; color:var(--muted); font-size:.9rem; font-weight:600; }
 
 /* ---------- feedback / testimonials ---------- */
-.testimonials{ background:var(--surface-tint); }
-.feedback{ margin-top:26px; display:grid; grid-template-columns:repeat(auto-fit, minmax(220px,1fr)); gap:18px; }
-.fcard{ border:1px solid var(--line); border-radius:4px; padding:18px; background:var(--surface); }
-.fcard p{ margin:0; font-size:.92rem; line-height:1.55; color:var(--ink); }
-.fcard .mark{ font-family:"Newsreader", Georgia, serif; font-size:1.6rem; color:var(--accent); line-height:1; margin-bottom:6px; }
+.testimonials{ background:var(--surface-tint); padding-top:28px; }
+.experience-links-intro{ margin-top:28px; }
+.experience-links{ list-style:none; margin:10px 0 0; padding:0; display:grid; gap:8px; }
+.experience-links a{ font-size:.95rem; }
 
 /* ---------- vastaanotto ---------- */
 .vastaanotto-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,.9fr); gap:48px; align-items:center; margin-top:28px; }
