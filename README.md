@@ -19,9 +19,12 @@ Verkkotunnuksen DNS-hallinta on siirretty domainhotellin nimipalvelimilta **Clou
 - SSL/TLS-tila Cloudflaressa: **"Full"** (ei "Full strict" — GitHubin oma origin-varmenne on `*.github.io`-wildcard eikä täsmää hostnimeen, joten "strict" epäonnistuisi)
 
 **Tärkeitä rajauksia jatkoa varten:**
-- Älä ota Cloudflaren proxya (oranssi pilvi) käyttöön GitHub Pagesin A-/www-tietueille ennen kuin domain on varmistetusti `Active` Cloudflaressa ja HTTPS on testattu DNS-only-tilassa.
+- **Cloudflaren proxy (oranssi pilvi) PITÄÄ olla päällä pysyvästi** `@`-A-tietueilla ja `www`-CNAME:lla — ei koskaan "DNS only" (harmaa pilvi). Katso alla oleva välikohtaus (16.11.2026): GitHub Pages ei ole koskaan onnistunut myöntämään omaa HTTPS-varmennetta tälle verkkotunnukselle, joten ilman Cloudflaren proxya HTTPS hajoaa heti kokonaan kävijöiltä (selain näyttää varmenne-virheen, koska palvelin tarjoaa vain geneeristä `*.github.io`-varmennetta). Tämä ei ole väliaikainen/testattava rajoitus, vaan pysyvä riippuvuus.
 - Arvin sähköposti **ei** käytä tätä verkkotunnusta (varmistettu) — mutta domainhotellilta tuotiin silti vanhat MX/SPF/DKIM-tietueet Cloudflareen talteen siltä varalta että sähköposti otetaan joskus käyttöön.
 - Jos Cloudflare-siirto jostain syystä pitää perua, nimipalvelimet voi palauttaa domainhotellissa takaisin arvoihin `ns1.domainhotelli.fi` / `ns2.domainhotelli.fi` / `ns3.domainhotelli.fi`.
+
+**Välikohtaus 16.11.2026 — proxy oli hetken pois päältä, HTTPS hajosi:**
+Google Search Console ilmoitti 2 sivun saavan `403`-virheen indeksoinnissa. Tutkittaessa selvisi, että Cloudflaren proxy oli jostain syystä pois päältä (`DNS only`) kyseisillä tietueilla — DNS osoitti suoraan GitHub Pagesin IP-osoitteisiin Cloudflaren anycast-IP:iden sijaan. Tämä paljasti alkuperäisen, koskaan oikeasti korjaamattoman ongelman uudelleen: suoraan yhdistettäessä palvelin tarjosi `*.github.io`-wildcard-varmenteen, joka ei täsmää `arvimattikuusniemi.fi`:hin (`curl`: "SSL: no alternative certificate subject name matches target host name"), joten HTTPS epäonnistui täysin tavallisille kävijöille ajan, jonka proxy oli pois päältä. Korjaus: pilvet takaisin oranssiksi samoille viidelle tietueelle → HTTPS palautui heti (vahvistettu `curl --resolve` + `openssl s_client`). **Opetus:** GitHub Pagesin oma varmenne tälle domainille on edelleen rikki/myöntämättä — Cloudflaren proxy ei ole vaihtoehtoinen parannus vaan pakollinen kiertotapa, jota ilman sivusto ei toimi HTTPS:llä lainkaan.
 
 ## Analytiikka ja tietosuoja
 
