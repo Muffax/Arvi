@@ -39,14 +39,36 @@
     }
   }
 
+  function getBackdrop() {
+    var backdrop = document.getElementById('cookie-backdrop');
+    if (!backdrop) {
+      backdrop = document.createElement('div');
+      backdrop.id = 'cookie-backdrop';
+      backdrop.className = 'cookie-backdrop';
+      backdrop.hidden = true;
+      var banner = document.getElementById('cookie-consent');
+      if (banner && banner.parentNode) {
+        banner.parentNode.insertBefore(backdrop, banner);
+      } else {
+        document.body.appendChild(backdrop);
+      }
+    }
+    return backdrop;
+  }
+
   function showBanner() {
     var banner = document.getElementById('cookie-consent');
     if (banner) banner.hidden = false;
+    getBackdrop().hidden = false;
+    document.body.style.overflow = 'hidden';
     refreshUI();
   }
   function hideBanner() {
     var banner = document.getElementById('cookie-consent');
     if (banner) banner.hidden = true;
+    var backdrop = document.getElementById('cookie-backdrop');
+    if (backdrop) backdrop.hidden = true;
+    document.body.style.overflow = '';
   }
 
   document.addEventListener('DOMContentLoaded', function () {
